@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login & Registration</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      width: 350px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+    }
+
+    .tab {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 25px;
+    }
+
+    .tab label {
+      cursor: pointer;
+      font-weight: bold;
+      padding: 10px 20px;
+      border-radius: 8px;
+      color: #764ba2;
+      transition: 0.3s;
+    }
+
+    input[type="radio"] {
+      display: none;
+    }
+
+    input#login:checked ~ .tab label[for="login"],
+    input#register:checked ~ .tab label[for="register"] {
+      background-color: #764ba2;
+      color: #fff;
+    }
+
+    form {
+      display: none;
+      flex-direction: column;
+    }
+
+    input#login:checked ~ .form-container form.login-form,
+    input#register:checked ~ .form-container form.register-form {
+      display: flex;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .input-box {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-box input {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .input-box label {
+      position: absolute;
+      left: 12px;
+      top: 12px;
+      color: #999;
+      font-size: 14px;
+      background: #fff;
+      padding: 0 5px;
+      pointer-events: none;
+      transition: 0.3s;
+    }
+
+    .input-box input:focus,
+    .input-box input:valid {
+      border-color: #764ba2;
+    }
+
+    .input-box input:focus + label,
+    .input-box input:valid + label {
+      top: -10px;
+      left: 10px;
+      font-size: 12px;
+      color: #764ba2;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background-color: #667eea;
+      border: none;
+      color: white;
+      border-radius: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background-color: #5a67d8;
+    }
+
+    .switch-message {
+      text-align: center;
+      margin-top: 15px;
+      font-size: 14px;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Hidden radio buttons to switch forms -->
+    <input type="radio" name="tab" id="login" checked>
+    <input type="radio" name="tab" id="register">
+
+    <!-- Tab Navigation -->
+    <div class="tab">
+      <label for="login">Login</label>
+      <label for="register">Register</label>
+    </div>
+
+    <!-- Form Section -->
+    <div class="form-container">
+      <!-- Login Form -->
+      <form class="login-form">
+        <h2>Login</h2>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+
+      <!-- Registration Form -->
+      <form class="register-form">
+        <h2>Register</h2>
+        <div class="input-box">
+          <input type="text" required>
+          <label>Full Name</label>
+        </div>
+        <div class="input-box">
+          <input type="email" required>
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Password</label>
+        </div>
+        <div class="input-box">
+          <input type="password" required>
+          <label>Confirm Password</label>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>
+    
